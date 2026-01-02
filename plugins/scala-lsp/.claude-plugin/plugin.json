@@ -1,0 +1,12 @@
+{
+    "name": "scala-lsp",
+    "version": "0.1.0",
+    "description": "Scala language server plugin for Claude Code with Metals LSP integration and automated hooks for formatting, linting, and testing",
+    "author": {
+        "name": "zircote",
+        "email": "zircote@gmail.com"
+    },
+    "repository": "https://github.com/zircote/scala-lsp",
+    "license": "MIT",
+    "keywords": ["scala", "lsp", "language-server", "claude-plugin", "code-assistant", "metals", "sbt", "scalafmt"]
+}

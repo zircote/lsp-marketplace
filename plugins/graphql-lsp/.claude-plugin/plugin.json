@@ -1,0 +1,12 @@
+{
+    "name": "graphql-lsp",
+    "version": "0.1.0",
+    "description": "GraphQL language server plugin for Claude Code with graphql-lsp integration and automated hooks for validation and formatting",
+    "author": {
+        "name": "zircote",
+        "email": "zircote@gmail.com"
+    },
+    "repository": "https://github.com/zircote/graphql-lsp",
+    "license": "MIT",
+    "keywords": ["graphql", "gql", "lsp", "language-server", "claude-plugin", "code-assistant", "eslint-plugin-graphql", "prettier"]
+}

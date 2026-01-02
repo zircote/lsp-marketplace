@@ -1,0 +1,13 @@
+{
+    "svelte": {
+        "command": "svelteserver",
+        "args": ["--stdio"],
+        "extensionToLanguage": {
+            ".svelte": "svelte"
+        },
+        "transport": "stdio",
+        "initializationOptions": {},
+        "settings": {},
+        "maxRestarts": 3
+    }
+}

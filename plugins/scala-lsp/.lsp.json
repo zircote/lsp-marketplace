@@ -1,0 +1,15 @@
+{
+    "scala": {
+        "command": "metals",
+        "args": [],
+        "extensionToLanguage": {
+            ".scala": "scala",
+            ".sc": "scala",
+            ".sbt": "sbt"
+        },
+        "transport": "stdio",
+        "initializationOptions": {},
+        "settings": {},
+        "maxRestarts": 3
+    }
+}

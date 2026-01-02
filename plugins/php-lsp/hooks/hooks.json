@@ -1,0 +1,17 @@
+{
+  "description": "PHP development hooks for automated linting, formatting, static analysis, and testing",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/php-hooks.sh\"",
+            "timeout": 120
+          }
+        ]
+      }
+    ]
+  }
+}

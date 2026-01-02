@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate JSON files
+        run: |
+          echo "Validating .lsp.json..."
+          python3 -m json.tool .lsp.json > /dev/null
+          echo "Validating hooks/hooks.json..."
+          python3 -m json.tool hooks/hooks.json > /dev/null
+          echo "Validating .claude-plugin/plugin.json..."
+          python3 -m json.tool .claude-plugin/plugin.json > /dev/null
+          echo "All JSON files valid"
+
+      - name: Check required files exist
+        run: |
+          test -f .lsp.json || (echo "Missing .lsp.json" && exit 1)
+          test -f hooks/hooks.json || (echo "Missing hooks/hooks.json" && exit 1)
+          test -f commands/setup.md || (echo "Missing commands/setup.md" && exit 1)
+          test -f .claude-plugin/plugin.json || (echo "Missing plugin.json" && exit 1)
+          test -f CLAUDE.md || (echo "Missing CLAUDE.md" && exit 1)
+          test -f README.md || (echo "Missing README.md" && exit 1)
+          echo "All required files present"
+
+      - name: Lint markdown
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          globs: "**/*.md"

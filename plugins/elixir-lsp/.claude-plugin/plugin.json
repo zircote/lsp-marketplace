@@ -1,0 +1,12 @@
+{
+    "name": "elixir-lsp",
+    "version": "0.1.0",
+    "description": "Elixir language server plugin for Claude Code with ElixirLS integration and automated hooks for formatting, linting, and testing",
+    "author": {
+        "name": "zircote",
+        "email": "zircote@gmail.com"
+    },
+    "repository": "https://github.com/zircote/elixir-lsp",
+    "license": "MIT",
+    "keywords": ["elixir", "lsp", "language-server", "claude-plugin", "code-assistant", "elixir-ls", "mix", "credo"]
+}

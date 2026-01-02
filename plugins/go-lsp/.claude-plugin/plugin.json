@@ -1,0 +1,24 @@
+{
+    "name": "go-lsp",
+    "version": "0.1.0",
+    "description": "Claude Code plugin for Go development with gopls LSP integration, 14 automated hooks for linting (golangci-lint), formatting (gofmt), testing, and security scanning (govulncheck)",
+    "author": {
+        "name": "zircote",
+        "email": "zircote@gmail.com"
+    },
+    "repository": "https://github.com/zircote/go-lsp",
+    "homepage": "https://github.com/zircote/go-lsp#readme",
+    "license": "MIT",
+    "keywords": [
+        "go",
+        "golang",
+        "gopls",
+        "lsp",
+        "language-server",
+        "claude-code",
+        "claude-plugin",
+        "golangci-lint",
+        "gofmt",
+        "govulncheck"
+    ]
+}

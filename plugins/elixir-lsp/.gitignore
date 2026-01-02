@@ -1,0 +1,28 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Node modules (if any)
+node_modules/
+
+# Python (if any)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Build artifacts
+*.log
+*.tmp
+
+# Local configuration
+*.local
+.env
+.env.local

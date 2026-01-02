@@ -1,0 +1,12 @@
+{
+    "name": "svelte-lsp",
+    "version": "0.1.0",
+    "description": "Svelte language server plugin for Claude Code with svelte-language-server integration and automated hooks for linting and formatting",
+    "author": {
+        "name": "zircote",
+        "email": "zircote@gmail.com"
+    },
+    "repository": "https://github.com/zircote/svelte-lsp",
+    "license": "MIT",
+    "keywords": ["svelte", "lsp", "language-server", "claude-plugin", "code-assistant", "svelte-check", "eslint", "prettier"]
+}

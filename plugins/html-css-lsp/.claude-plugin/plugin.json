@@ -1,0 +1,12 @@
+{
+    "name": "html-css-lsp",
+    "version": "0.1.0",
+    "description": "HTML/CSS language server plugin for Claude Code with vscode-html/css-language-server integration and automated hooks for validation and formatting",
+    "author": {
+        "name": "zircote",
+        "email": "zircote@gmail.com"
+    },
+    "repository": "https://github.com/zircote/html-css-lsp",
+    "license": "MIT",
+    "keywords": ["html", "css", "scss", "less", "lsp", "language-server", "claude-plugin", "code-assistant", "prettier", "stylelint"]
+}

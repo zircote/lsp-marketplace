@@ -1,0 +1,12 @@
+{
+    "name": "haskell-lsp",
+    "version": "0.1.0",
+    "description": "Haskell language server plugin for Claude Code with haskell-language-server integration and automated hooks for linting and formatting",
+    "author": {
+        "name": "zircote",
+        "email": "zircote@gmail.com"
+    },
+    "repository": "https://github.com/zircote/haskell-lsp",
+    "license": "MIT",
+    "keywords": ["haskell", "lsp", "language-server", "claude-plugin", "code-assistant", "hls", "hlint", "ormolu", "fourmolu"]
+}

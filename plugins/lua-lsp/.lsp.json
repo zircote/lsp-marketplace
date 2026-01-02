@@ -1,0 +1,22 @@
+{
+    "lua": {
+        "command": "lua-language-server",
+        "args": [],
+        "extensionToLanguage": {
+            ".lua": "lua"
+        },
+        "transport": "stdio",
+        "initializationOptions": {},
+        "settings": {
+            "Lua": {
+                "diagnostics": {
+                    "enable": true
+                },
+                "workspace": {
+                    "checkThirdParty": false
+                }
+            }
+        },
+        "maxRestarts": 3
+    }
+}

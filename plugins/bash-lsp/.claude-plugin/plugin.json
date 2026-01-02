@@ -1,0 +1,12 @@
+{
+    "name": "bash-lsp",
+    "version": "0.1.0",
+    "description": "Bash/Shell language server plugin for Claude Code with bash-language-server integration and automated hooks for linting and formatting",
+    "author": {
+        "name": "zircote",
+        "email": "zircote@gmail.com"
+    },
+    "repository": "https://github.com/zircote/bash-lsp",
+    "license": "MIT",
+    "keywords": ["bash", "shell", "lsp", "language-server", "claude-plugin", "code-assistant", "shellcheck", "shfmt"]
+}

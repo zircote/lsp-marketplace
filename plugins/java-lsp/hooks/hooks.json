@@ -1,0 +1,17 @@
+{
+  "description": "Java development hooks for building, linting, formatting, and testing",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/java-hooks.sh\"",
+            "timeout": 180
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "description": "Zig development hooks for automated formatting and building",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/zig-hooks.sh\"",
+            "timeout": 120
+          }
+        ]
+      }
+    ]
+  }
+}

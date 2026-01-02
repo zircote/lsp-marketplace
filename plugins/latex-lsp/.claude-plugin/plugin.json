@@ -1,0 +1,12 @@
+{
+    "name": "latex-lsp",
+    "version": "0.1.0",
+    "description": "LaTeX language server plugin for Claude Code with texlab integration and automated hooks for building and linting",
+    "author": {
+        "name": "zircote",
+        "email": "zircote@gmail.com"
+    },
+    "repository": "https://github.com/zircote/latex-lsp",
+    "license": "MIT",
+    "keywords": ["latex", "tex", "bibtex", "lsp", "language-server", "claude-plugin", "code-assistant", "texlab", "chktex"]
+}

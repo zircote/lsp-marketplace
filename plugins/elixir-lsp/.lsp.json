@@ -1,0 +1,17 @@
+{
+    "elixir": {
+        "command": "elixir-ls",
+        "args": [],
+        "extensionToLanguage": {
+            ".ex": "elixir",
+            ".exs": "elixir",
+            ".eex": "eex",
+            ".heex": "heex",
+            ".leex": "leex"
+        },
+        "transport": "stdio",
+        "initializationOptions": {},
+        "settings": {},
+        "maxRestarts": 3
+    }
+}

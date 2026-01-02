@@ -1,0 +1,17 @@
+{
+  "description": "LaTeX development hooks for automated building and linting",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/latex-hooks.sh\"",
+            "timeout": 120
+          }
+        ]
+      }
+    ]
+  }
+}

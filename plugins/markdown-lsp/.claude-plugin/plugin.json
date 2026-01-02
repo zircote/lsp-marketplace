@@ -1,0 +1,5 @@
+{
+    "name": "marksman-lsp",
+    "description": "Markdown language server (marksman) for Claude Code",
+    "version": "0.1.2"
+}

@@ -1,0 +1,209 @@
+# Hook test
+# Sample GraphQL schema for LSP plugin validation.
+#
+# This file contains various GraphQL constructs to test:
+# - LSP operations (hover, validation, completion)
+# - Hook validation (linting, formatting)
+
+# Scalar types
+scalar DateTime
+scalar JSON
+scalar Upload
+
+# Enums
+enum UserRole {
+  ADMIN
+  USER
+  GUEST
+}
+
+enum SortOrder {
+  ASC
+  DESC
+}
+
+# Interfaces
+interface Node {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+interface Timestamped {
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+# Types
+type User implements Node & Timestamped {
+  id: ID!
+  username: String!
+  email: String!
+  role: UserRole!
+  profile: UserProfile
+  posts: [Post!]!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type UserProfile {
+  bio: String
+  avatar: String
+  website: String
+  location: String
+}
+
+type Post implements Node & Timestamped {
+  id: ID!
+  title: String!
+  content: String!
+  published: Boolean!
+  author: User!
+  comments: [Comment!]!
+  tags: [String!]!
+  metadata: JSON
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Comment implements Node & Timestamped {
+  id: ID!
+  content: String!
+  author: User!
+  post: Post!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+# Input types
+input CreateUserInput {
+  username: String!
+  email: String!
+  password: String!
+  role: UserRole = USER
+}
+
+input UpdateUserInput {
+  username: String
+  email: String
+  role: UserRole
+  profile: UserProfileInput
+}
+
+input UserProfileInput {
+  bio: String
+  avatar: Upload
+  website: String
+  location: String
+}
+
+input CreatePostInput {
+  title: String!
+  content: String!
+  published: Boolean = false
+  tags: [String!]
+}
+
+input PostFilter {
+  authorId: ID
+  published: Boolean
+  tags: [String!]
+  search: String
+}
+
+input PaginationInput {
+  page: Int = 1
+  limit: Int = 10
+  sortBy: String = "createdAt"
+  sortOrder: SortOrder = DESC
+}
+
+# Union types
+union SearchResult = User | Post | Comment
+
+# Query type
+type Query {
+  # User queries
+  user(id: ID!): User
+  users(filter: String, pagination: PaginationInput): UserConnection!
+  me: User
+
+  # Post queries
+  post(id: ID!): Post
+  posts(filter: PostFilter, pagination: PaginationInput): PostConnection!
+
+  # Search
+  search(query: String!, limit: Int = 10): [SearchResult!]!
+
+  # Health check
+  health: String!
+}
+
+# Mutation type
+type Mutation {
+  # User mutations
+  createUser(input: CreateUserInput!): User!
+  updateUser(id: ID!, input: UpdateUserInput!): User!
+  deleteUser(id: ID!): Boolean!
+
+  # Post mutations
+  createPost(input: CreatePostInput!): Post!
+  updatePost(id: ID!, input: CreatePostInput!): Post!
+  deletePost(id: ID!): Boolean!
+  publishPost(id: ID!): Post!
+
+  # Comment mutations
+  createComment(postId: ID!, content: String!): Comment!
+  deleteComment(id: ID!): Boolean!
+}
+
+# Subscription type
+type Subscription {
+  postCreated: Post!
+  commentAdded(postId: ID!): Comment!
+  userStatusChanged(userId: ID!): User!
+}
+
+# Pagination types
+type UserConnection {
+  edges: [UserEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type UserEdge {
+  node: User!
+  cursor: String!
+}
+
+type PostConnection {
+  edges: [PostEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type PostEdge {
+  node: Post!
+  cursor: String!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+# Directives
+directive @auth(requires: UserRole = USER) on FIELD_DEFINITION | OBJECT
+directive @deprecated(reason: String = "No longer supported") on FIELD_DEFINITION | ENUM_VALUE
+directive @cacheControl(maxAge: Int, scope: CacheScope) on FIELD_DEFINITION | OBJECT
+
+enum CacheScope {
+  PUBLIC
+  PRIVATE
+}
+
+# Example queries with fragments
+# TODO: Add more complex query examples
+# FIXME: Optimize nested resolver performance

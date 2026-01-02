@@ -1,0 +1,12 @@
+{
+    "name": "swift-lsp",
+    "version": "0.1.0",
+    "description": "Swift language server plugin for Claude Code with SourceKit-LSP integration and automated hooks for formatting, linting, and testing",
+    "author": {
+        "name": "zircote",
+        "email": "zircote@gmail.com"
+    },
+    "repository": "https://github.com/zircote/swift-lsp",
+    "license": "MIT",
+    "keywords": ["swift", "lsp", "language-server", "claude-plugin", "code-assistant", "sourcekit", "swiftlint", "swiftformat"]
+}

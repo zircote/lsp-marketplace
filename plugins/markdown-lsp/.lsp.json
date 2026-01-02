@@ -1,0 +1,12 @@
+{
+    "markdown": {
+        "command": "marksman",
+        "args": [
+            "server"
+        ],
+        "extensionToLanguage": {
+            ".md": "markdown"
+        },
+        "transport": "stdio"
+    }
+}

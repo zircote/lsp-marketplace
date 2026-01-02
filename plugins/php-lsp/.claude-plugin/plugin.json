@@ -1,0 +1,12 @@
+{
+    "name": "php-lsp",
+    "version": "0.1.0",
+    "description": "PHP language server plugin for Claude Code with Phpactor LSP integration and automated hooks for linting, formatting, and testing",
+    "author": {
+        "name": "zircote",
+        "email": "zircote@gmail.com"
+    },
+    "repository": "https://github.com/zircote/php-lsp",
+    "license": "MIT",
+    "keywords": ["php", "lsp", "language-server", "claude-plugin", "code-assistant", "phpactor", "composer", "phpstan", "phpcs"]
+}

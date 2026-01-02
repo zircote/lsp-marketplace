@@ -1,0 +1,114 @@
+# Sample YAML test file for LSP plugin validation.
+#
+# This file contains various YAML constructs to test:
+# - LSP operations (hover, validation, schema support)
+# - Hook validation (linting, formatting)
+
+# Application configuration
+application:
+  name: Sample Application
+  version: 1.0.0
+  environment: development
+
+# User definitions
+users:
+  - name: Alice
+    email: alice@example.com
+    age: null
+    roles:
+      - user
+      - admin
+
+  - name: Bob
+    email: bob@example.com
+    age: 25
+    roles:
+      - user
+
+  - name: Charlie
+    email: charlie@example.com
+    age: 15
+    roles:
+      - user
+
+# Service configuration
+services:
+  database:
+    host: localhost
+    port: 5432
+    name: sample_db
+    credentials:
+      username: admin
+      # TODO: Move to environment variable
+      password: ${DB_PASSWORD}
+
+  cache:
+    enabled: true
+    ttl: 3600
+    provider: redis
+    connection:
+      host: localhost
+      port: 6379
+
+  api:
+    base_url: https://api.example.com
+    timeout: 30
+    retry:
+      enabled: true
+      max_attempts: 3
+      backoff: exponential
+
+# Feature flags
+features:
+  dark_mode: true
+  beta_features: false
+  experimental:
+    - feature_a
+    - feature_b
+
+# FIXME: Handle edge cases for empty arrays
+empty_list: []
+
+# Complex nested structure
+nested:
+  level1:
+    level2:
+      level3:
+        value: deeply nested
+
+# Multi-line strings
+description: |
+  This is a multi-line string
+  that preserves newlines and
+  can be used for documentation.
+
+inline_description: >
+  This is a folded string that
+  will be joined into a single
+  line with spaces.
+
+# Anchors and aliases
+defaults: &defaults
+  adapter: postgres
+  pool: 5
+
+development:
+  <<: *defaults
+  database: dev_db
+
+production:
+  <<: *defaults
+  database: prod_db
+  pool: 25
+
+# Numbers and booleans
+metrics:
+  enabled: true
+  sample_rate: 0.1
+  max_events: 1000
+  precision: 3.14159
+
+# Null values
+optional_config:
+  field1: null
+  field2: ~

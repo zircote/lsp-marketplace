@@ -1,0 +1,101 @@
+// Hook test
+{
+  "application": {
+    "name": "Sample Application",
+    "version": "1.0.0",
+    "environment": "development",
+    "debug": true
+  },
+  "users": [
+    {
+      "id": 1,
+      "name": "Alice",
+      "email": "alice@example.com",
+      "age": null,
+      "roles": ["user", "admin"],
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "email": "bob@example.com",
+      "age": 25,
+      "roles": ["user"],
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Charlie",
+      "email": "charlie@example.com",
+      "age": 15,
+      "roles": ["user"],
+      "active": false
+    }
+  ],
+  "services": {
+    "database": {
+      "host": "localhost",
+      "port": 5432,
+      "name": "sample_db",
+      "credentials": {
+        "username": "admin",
+        "password": "${DB_PASSWORD}"
+      },
+      "pool": {
+        "min": 2,
+        "max": 10
+      }
+    },
+    "cache": {
+      "enabled": true,
+      "ttl": 3600,
+      "provider": "redis",
+      "connection": {
+        "host": "localhost",
+        "port": 6379
+      }
+    },
+    "api": {
+      "baseUrl": "https://api.example.com",
+      "timeout": 30,
+      "retry": {
+        "enabled": true,
+        "maxAttempts": 3,
+        "backoff": "exponential"
+      }
+    }
+  },
+  "features": {
+    "darkMode": true,
+    "betaFeatures": false,
+    "experimental": ["feature_a", "feature_b"],
+    "disabled": []
+  },
+  "nested": {
+    "level1": {
+      "level2": {
+        "level3": {
+          "value": "deeply nested",
+          "metadata": {
+            "created": "2025-01-02T00:00:00Z",
+            "modified": "2025-01-02T00:00:00Z"
+          }
+        }
+      }
+    }
+  },
+  "metrics": {
+    "enabled": true,
+    "sampleRate": 0.1,
+    "maxEvents": 1000,
+    "precision": 3.14159
+  },
+  "optionalConfig": {
+    "field1": null,
+    "field2": null
+  },
+  "emptyCollections": {
+    "emptyArray": [],
+    "emptyObject": {}
+  }
+}

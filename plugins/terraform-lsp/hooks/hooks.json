@@ -1,0 +1,210 @@
+{
+    "hooks": {
+        "PostToolUse": [
+            {
+                "matcher": "Write|Edit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "terraform fmt \"$CLAUDE_FILE_PATH\" 2>/dev/null || true"
+                    }
+                ],
+                "conditions": {
+                    "fileExtensions": [".tf"]
+                }
+            },
+            {
+                "matcher": "Write|Edit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "cd \"$(dirname \"$CLAUDE_FILE_PATH\")\" && terraform validate 2>&1 | head -20 || true"
+                    }
+                ],
+                "conditions": {
+                    "fileExtensions": [".tf"]
+                }
+            },
+            {
+                "matcher": "Write|Edit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "cd \"$(dirname \"$CLAUDE_FILE_PATH\")\" && [ ! -d .terraform ] && echo '  terraform init required - run: terraform init' || true"
+                    }
+                ],
+                "conditions": {
+                    "fileExtensions": [".tf"]
+                }
+            },
+            {
+                "matcher": "Write|Edit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "command -v tflint >/dev/null && cd \"$(dirname \"$CLAUDE_FILE_PATH\")\" && tflint --format compact 2>&1 | head -30 || true"
+                    }
+                ],
+                "conditions": {
+                    "fileExtensions": [".tf"]
+                }
+            },
+            {
+                "matcher": "Write|Edit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "command -v trivy >/dev/null && cd \"$(dirname \"$CLAUDE_FILE_PATH\")\" && trivy config --severity HIGH,CRITICAL --exit-code 0 . 2>&1 | head -30 || true"
+                    }
+                ],
+                "conditions": {
+                    "fileExtensions": [".tf"]
+                }
+            },
+            {
+                "matcher": "Write|Edit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "command -v checkov >/dev/null && checkov -f \"$CLAUDE_FILE_PATH\" --compact --quiet 2>&1 | head -30 || true"
+                    }
+                ],
+                "conditions": {
+                    "fileExtensions": [".tf"]
+                }
+            },
+            {
+                "matcher": "Write|Edit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "grep -nE '(TODO|FIXME|XXX|HACK):?' \"$CLAUDE_FILE_PATH\" 2>/dev/null | head -10 || true"
+                    }
+                ],
+                "conditions": {
+                    "fileExtensions": [".tf"]
+                }
+            },
+            {
+                "matcher": "Write|Edit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "grep -inE '(password|secret|api_key|access_key|private_key)\\s*=' \"$CLAUDE_FILE_PATH\" 2>/dev/null && echo '  Sensitive data detected - ensure using sensitive = true or secrets manager' || true"
+                    }
+                ],
+                "conditions": {
+                    "fileExtensions": [".tf"]
+                }
+            },
+            {
+                "matcher": "Write|Edit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "terraform fmt \"$CLAUDE_FILE_PATH\" 2>/dev/null || true"
+                    }
+                ],
+                "conditions": {
+                    "fileExtensions": [".tfvars"]
+                }
+            },
+            {
+                "matcher": "Write|Edit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "grep -inE '(password|secret|api_key|access_key|private_key)\\s*=' \"$CLAUDE_FILE_PATH\" 2>/dev/null && echo '  Sensitive values detected - ensure this file is in .gitignore' || true"
+                    }
+                ],
+                "conditions": {
+                    "fileExtensions": [".tfvars"]
+                }
+            },
+            {
+                "matcher": "Write|Edit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "command -v terragrunt >/dev/null && terragrunt hclfmt \"$CLAUDE_FILE_PATH\" 2>/dev/null || true"
+                    }
+                ],
+                "conditions": {
+                    "pathPatterns": ["**/terragrunt.hcl"]
+                }
+            },
+            {
+                "matcher": "Write|Edit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "command -v terragrunt >/dev/null && cd \"$(dirname \"$CLAUDE_FILE_PATH\")\" && terragrunt validate 2>&1 | head -20 || true"
+                    }
+                ],
+                "conditions": {
+                    "pathPatterns": ["**/terragrunt.hcl"]
+                }
+            },
+            {
+                "matcher": "Write|Edit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "command -v terraform-docs >/dev/null && [ -f \"$(dirname \"$CLAUDE_FILE_PATH\")/README.md\" ] && echo \"  Update docs: terraform-docs markdown . --output-file README.md\" || true"
+                    }
+                ],
+                "conditions": {
+                    "pathPatterns": ["**/variables.tf"]
+                }
+            },
+            {
+                "matcher": "Write|Edit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "echo \"  Preview changes: terraform plan\" || true"
+                    }
+                ],
+                "conditions": {
+                    "pathPatterns": ["**/main.tf"]
+                }
+            },
+            {
+                "matcher": "Write|Edit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "command -v infracost >/dev/null && echo \"  Cost estimate: infracost breakdown --path .\" || true"
+                    }
+                ],
+                "conditions": {
+                    "pathPatterns": ["**/main.tf"]
+                }
+            },
+            {
+                "matcher": "Write|Edit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "echo \"  Update providers: terraform init -upgrade\" || true"
+                    }
+                ],
+                "conditions": {
+                    "pathPatterns": ["**/.terraform.lock.hcl"]
+                }
+            },
+            {
+                "matcher": "Write|Edit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "command -v markdownlint >/dev/null && markdownlint \"$CLAUDE_FILE_PATH\" 2>&1 | head -20 || true"
+                    }
+                ],
+                "conditions": {
+                    "fileExtensions": [".md"]
+                }
+            }
+        ]
+    }
+}

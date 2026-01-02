@@ -1,0 +1,17 @@
+{
+  "description": "Haskell development hooks for automated linting and formatting",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/haskell-hooks.sh\"",
+            "timeout": 120
+          }
+        ]
+      }
+    ]
+  }
+}

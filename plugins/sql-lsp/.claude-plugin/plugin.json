@@ -1,0 +1,12 @@
+{
+    "name": "sql-lsp",
+    "version": "0.1.0",
+    "description": "SQL language server plugin for Claude Code with sql-language-server integration and automated hooks for formatting and linting",
+    "author": {
+        "name": "zircote",
+        "email": "zircote@gmail.com"
+    },
+    "repository": "https://github.com/zircote/sql-lsp",
+    "license": "MIT",
+    "keywords": ["sql", "lsp", "language-server", "claude-plugin", "code-assistant", "sqlfluff", "sqlfmt"]
+}

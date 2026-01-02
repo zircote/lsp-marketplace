@@ -1,0 +1,21 @@
+{
+    "yaml": {
+        "command": "yaml-language-server",
+        "args": ["--stdio"],
+        "extensionToLanguage": {
+            ".yaml": "yaml",
+            ".yml": "yaml"
+        },
+        "transport": "stdio",
+        "initializationOptions": {},
+        "settings": {
+            "yaml": {
+                "validate": true,
+                "hover": true,
+                "completion": true,
+                "schemas": {}
+            }
+        },
+        "maxRestarts": 3
+    }
+}

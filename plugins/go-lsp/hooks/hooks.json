@@ -1,0 +1,17 @@
+{
+  "description": "Go development hooks for formatting, linting, testing, and security scanning",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PLUGIN_ROOT/hooks/scripts/go-hooks.sh\"",
+            "timeout": 120
+          }
+        ]
+      }
+    ]
+  }
+}

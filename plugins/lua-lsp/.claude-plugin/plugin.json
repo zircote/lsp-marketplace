@@ -1,0 +1,12 @@
+{
+    "name": "lua-lsp",
+    "version": "0.1.0",
+    "description": "Lua language server plugin for Claude Code with lua-language-server integration and automated hooks for linting and formatting",
+    "author": {
+        "name": "zircote",
+        "email": "zircote@gmail.com"
+    },
+    "repository": "https://github.com/zircote/lua-lsp",
+    "license": "MIT",
+    "keywords": ["lua", "lsp", "language-server", "claude-plugin", "code-assistant", "luacheck", "stylua"]
+}

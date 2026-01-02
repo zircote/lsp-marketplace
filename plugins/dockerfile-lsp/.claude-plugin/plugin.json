@@ -1,0 +1,12 @@
+{
+    "name": "dockerfile-lsp",
+    "version": "0.1.0",
+    "description": "Dockerfile language server plugin for Claude Code with docker-langserver integration and automated hooks for linting and best practices",
+    "author": {
+        "name": "zircote",
+        "email": "zircote@gmail.com"
+    },
+    "repository": "https://github.com/zircote/dockerfile-lsp",
+    "license": "MIT",
+    "keywords": ["dockerfile", "docker", "lsp", "language-server", "claude-plugin", "code-assistant", "hadolint"]
+}
