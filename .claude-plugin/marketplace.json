@@ -12,7 +12,10 @@
     "plugins": [
         {
             "name": "lsp-tools",
-            "source": "zircote/lsp-tools",
+            "source": {
+                "source": "github",
+                "repo": "zircote/lsp-tools"
+            },
             "description": "LSP-first code intelligence enforcing Language Server Protocol usage for all code operations across 12 languages"
         },
         {
