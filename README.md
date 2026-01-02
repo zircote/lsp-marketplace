@@ -1,58 +1,52 @@
 # LSP Marketplace
 
-A marketplace of LSP-enabled Claude Code plugins providing language-specific development workflows with automated hooks for code quality, security, and diagnostics.
+A curated collection of LSP-enabled Claude Code plugins providing language-specific development workflows with automated hooks for code quality, security, and diagnostics.
 
 ## Overview
 
-This marketplace provides **28 language-specific LSP plugins** for Claude Code. Each plugin integrates with the corresponding Language Server Protocol implementation to provide real-time diagnostics, formatting, and code analysis through automated PostToolUse hooks.
+This marketplace provides **28 language-specific LSP plugins** for Claude Code. Each plugin lives in its own GitHub repository and integrates with the corresponding Language Server Protocol implementation to provide real-time diagnostics, formatting, and code analysis through automated PostToolUse hooks.
 
 ## Quick Start
 
 ```bash
-# Add this marketplace to Claude Code
-claude /plugin marketplace add zircote/lsp-marketplace
-
-# List available plugins
-claude /plugin list
-
-# Install a specific plugin
-claude /plugin install rust-lsp@lsp-marketplace
-claude /plugin install python-lsp@lsp-marketplace
-claude /plugin install go-lsp@lsp-marketplace
+# Install a plugin directly from its repo
+claude /plugin add zircote/rust-lsp
+claude /plugin add zircote/python-lsp
+claude /plugin add zircote/go-lsp
 ```
 
 ## Available Plugins
 
-| Plugin | Language | LSP Server | Key Features |
-|--------|----------|------------|--------------|
-| `bash-lsp` | Bash/Shell | bash-language-server | ShellCheck integration, syntax validation |
-| `cpp-lsp` | C/C++ | clangd | Clang-tidy, compile commands, diagnostics |
-| `csharp-lsp` | C# | OmniSharp | .NET analysis, Roslyn diagnostics |
-| `dockerfile-lsp` | Dockerfile | dockerfile-language-server | Hadolint, best practices |
-| `elixir-lsp` | Elixir | elixir-ls | Mix integration, dialyzer |
-| `go-lsp` | Go | gopls | go vet, staticcheck, golangci-lint |
-| `graphql-lsp` | GraphQL | graphql-language-service | Schema validation, query analysis |
-| `haskell-lsp` | Haskell | haskell-language-server | HLint, GHC diagnostics |
-| `html-css-lsp` | HTML/CSS | vscode-html-languageserver | W3C validation, accessibility |
-| `java-lsp` | Java | Eclipse JDT.LS | Maven/Gradle, SpotBugs |
-| `json-lsp` | JSON | vscode-json-languageserver | Schema validation, formatting |
-| `kotlin-lsp` | Kotlin | kotlin-language-server | Detekt, ktlint |
-| `latex-lsp` | LaTeX | texlab | ChkTeX, bibliography |
-| `lua-lsp` | Lua | lua-language-server | Luacheck, type annotations |
-| `markdown-lsp` | Markdown | marksman | Link validation, structure |
-| `php-lsp` | PHP | intelephense | PHPStan, Psalm |
-| `python-lsp` | Python | pylsp/pyright | Ruff, mypy, black |
-| `ruby-lsp` | Ruby | solargraph | RuboCop, Sorbet |
-| `rust-lsp` | Rust | rust-analyzer | Clippy, cargo-audit, cargo-deny |
-| `scala-lsp` | Scala | Metals | Scalafix, Scalafmt |
-| `sql-lsp` | SQL | sql-language-server | SQLFluff, query validation |
-| `svelte-lsp` | Svelte | svelte-language-server | Component validation |
-| `swift-lsp` | Swift | sourcekit-lsp | SwiftLint, SwiftFormat |
-| `terraform-lsp` | Terraform | terraform-ls | tfsec, tflint, checkov |
-| `typescript-lsp` | TypeScript | typescript-language-server | ESLint, Prettier |
-| `vue-lsp` | Vue | Volar | Template validation |
-| `yaml-lsp` | YAML | yaml-language-server | Schema validation, anchors |
-| `zig-lsp` | Zig | zls | Zig compiler diagnostics |
+| Plugin | Repository | Description |
+|--------|------------|-------------|
+| bash-lsp | [zircote/bash-lsp](https://github.com/zircote/bash-lsp) | Bash/Shell with bash-language-server and ShellCheck |
+| cpp-lsp | [zircote/cpp-lsp](https://github.com/zircote/cpp-lsp) | C/C++ with clangd, clang-tidy, clang-format |
+| csharp-lsp | [zircote/csharp-lsp](https://github.com/zircote/csharp-lsp) | C# with OmniSharp and dotnet format |
+| dockerfile-lsp | [zircote/dockerfile-lsp](https://github.com/zircote/dockerfile-lsp) | Dockerfile with dockerfile-language-server and hadolint |
+| elixir-lsp | [zircote/elixir-lsp](https://github.com/zircote/elixir-lsp) | Elixir with ElixirLS and mix format |
+| go-lsp | [zircote/go-lsp](https://github.com/zircote/go-lsp) | Go with gopls, gofmt, golangci-lint |
+| graphql-lsp | [zircote/graphql-lsp](https://github.com/zircote/graphql-lsp) | GraphQL with graphql-language-service |
+| haskell-lsp | [zircote/haskell-lsp](https://github.com/zircote/haskell-lsp) | Haskell with haskell-language-server, hlint, ormolu |
+| html-css-lsp | [zircote/html-css-lsp](https://github.com/zircote/html-css-lsp) | HTML/CSS with vscode-html-languageserver and stylelint |
+| java-lsp | [zircote/java-lsp](https://github.com/zircote/java-lsp) | Java with Eclipse JDT LSP, checkstyle |
+| json-lsp | [zircote/json-lsp](https://github.com/zircote/json-lsp) | JSON with vscode-json-languageserver |
+| kotlin-lsp | [zircote/kotlin-lsp](https://github.com/zircote/kotlin-lsp) | Kotlin with kotlin-language-server and ktlint |
+| latex-lsp | [zircote/latex-lsp](https://github.com/zircote/latex-lsp) | LaTeX with texlab and chktex |
+| lua-lsp | [zircote/lua-lsp](https://github.com/zircote/lua-lsp) | Lua with lua-language-server and luacheck |
+| markdown-lsp | [zircote/markdown-lsp](https://github.com/zircote/markdown-lsp) | Markdown with marksman and markdownlint |
+| php-lsp | [zircote/php-lsp](https://github.com/zircote/php-lsp) | PHP with intelephense, php-cs-fixer, phpstan |
+| python-lsp | [zircote/python-lsp](https://github.com/zircote/python-lsp) | Python with pylsp/pyright, ruff, black, mypy |
+| ruby-lsp | [zircote/ruby-lsp](https://github.com/zircote/ruby-lsp) | Ruby with solargraph and rubocop |
+| rust-lsp | [zircote/rust-lsp](https://github.com/zircote/rust-lsp) | Rust with rust-analyzer, clippy, rustfmt, cargo-audit |
+| scala-lsp | [zircote/scala-lsp](https://github.com/zircote/scala-lsp) | Scala with Metals and scalafmt |
+| sql-lsp | [zircote/sql-lsp](https://github.com/zircote/sql-lsp) | SQL with sql-language-server and sqlfluff |
+| svelte-lsp | [zircote/svelte-lsp](https://github.com/zircote/svelte-lsp) | Svelte with svelte-language-server |
+| swift-lsp | [zircote/swift-lsp](https://github.com/zircote/swift-lsp) | Swift with sourcekit-lsp and swiftformat |
+| terraform-lsp | [zircote/terraform-lsp](https://github.com/zircote/terraform-lsp) | Terraform with terraform-ls, tflint, trivy, checkov |
+| typescript-lsp | [zircote/typescript-lsp](https://github.com/zircote/typescript-lsp) | TypeScript/JavaScript with vtsls, eslint, prettier |
+| vue-lsp | [zircote/vue-lsp](https://github.com/zircote/vue-lsp) | Vue.js with Volar and eslint-plugin-vue |
+| yaml-lsp | [zircote/yaml-lsp](https://github.com/zircote/yaml-lsp) | YAML with yaml-language-server and yamllint |
+| zig-lsp | [zircote/zig-lsp](https://github.com/zircote/zig-lsp) | Zig with zls and zig fmt |
 
 ## Plugin Structure
 
@@ -62,11 +56,13 @@ Each plugin follows a consistent structure:
 plugin-name/
 ├── .claude-plugin/
 │   └── plugin.json       # Plugin manifest
+├── .lsp.json             # LSP server configuration
 ├── hooks/
 │   ├── hooks.json        # Hook definitions
 │   └── scripts/          # Hook implementation scripts
-├── commands/             # Slash commands (optional)
-├── tests/                # Test files for hook validation
+├── commands/
+│   └── setup.md          # /setup command
+├── tests/                # Test files for validation
 ├── CLAUDE.md             # Plugin documentation
 ├── README.md             # User documentation
 └── LICENSE               # MIT License
@@ -102,20 +98,8 @@ When you edit a file, the plugin automatically:
 
 ## Requirements
 
-Each plugin requires its respective LSP server to be installed. See individual plugin README files for setup instructions.
-
-## Contributing
-
-1. Fork this repository
-2. Create a new plugin following the structure above
-3. Add tests in the `tests/` directory
-4. Submit a pull request
+Each plugin requires its respective LSP server to be installed. Run `/setup` after installing a plugin to install dependencies.
 
 ## License
 
 MIT License - see [LICENSE](LICENSE) for details.
-
-## Related
-
-- [zircote/marketplace](https://github.com/zircote/marketplace) - Main Claude Code plugin marketplace
-- [Claude Code Documentation](https://docs.anthropic.com/claude-code)
