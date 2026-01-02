@@ -1,5 +1,10 @@
 # LSP Marketplace
 
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](CHANGELOG.md)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Claude Plugin](https://img.shields.io/badge/claude-plugin-orange.svg)](https://docs.anthropic.com/en/docs/claude-code/plugins)
+[![Plugins](https://img.shields.io/badge/plugins-28-brightgreen.svg)](#available-plugins)
+
 A curated collection of LSP-enabled Claude Code plugins providing language-specific development workflows with automated hooks for code quality, security, and diagnostics.
 
 ## Overview
