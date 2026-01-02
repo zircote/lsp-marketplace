@@ -11,143 +11,232 @@
     },
     "plugins": [
         {
+            "name": "lsp-tools",
+            "source": "zircote/lsp-tools",
+            "description": "LSP-first code intelligence enforcing Language Server Protocol usage for all code operations across 12 languages"
+        },
+        {
             "name": "bash-lsp",
-            "source": { "source": "github", "repo": "zircote/bash-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/bash-lsp"
+            },
             "description": "Bash/Shell development with bash-language-server LSP and ShellCheck hooks"
         },
         {
             "name": "cpp-lsp",
-            "source": { "source": "github", "repo": "zircote/cpp-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/cpp-lsp"
+            },
             "description": "C/C++ development with clangd LSP, clang-tidy, and clang-format hooks"
         },
         {
             "name": "csharp-lsp",
-            "source": { "source": "github", "repo": "zircote/csharp-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/csharp-lsp"
+            },
             "description": "C# development with OmniSharp LSP and dotnet format hooks"
         },
         {
             "name": "dockerfile-lsp",
-            "source": { "source": "github", "repo": "zircote/dockerfile-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/dockerfile-lsp"
+            },
             "description": "Dockerfile development with dockerfile-language-server LSP and hadolint hooks"
         },
         {
             "name": "elixir-lsp",
-            "source": { "source": "github", "repo": "zircote/elixir-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/elixir-lsp"
+            },
             "description": "Elixir development with ElixirLS LSP and mix format hooks"
         },
         {
             "name": "go-lsp",
-            "source": { "source": "github", "repo": "zircote/go-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/go-lsp"
+            },
             "description": "Go development with gopls LSP, gofmt, golangci-lint, and go vet hooks"
         },
         {
             "name": "graphql-lsp",
-            "source": { "source": "github", "repo": "zircote/graphql-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/graphql-lsp"
+            },
             "description": "GraphQL development with graphql-language-service LSP and schema validation hooks"
         },
         {
             "name": "haskell-lsp",
-            "source": { "source": "github", "repo": "zircote/haskell-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/haskell-lsp"
+            },
             "description": "Haskell development with haskell-language-server LSP, hlint, and ormolu hooks"
         },
         {
             "name": "html-css-lsp",
-            "source": { "source": "github", "repo": "zircote/html-css-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/html-css-lsp"
+            },
             "description": "HTML/CSS development with vscode-html-languageserver and stylelint hooks"
         },
         {
             "name": "java-lsp",
-            "source": { "source": "github", "repo": "zircote/java-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/java-lsp"
+            },
             "description": "Java development with Eclipse JDT LSP, checkstyle, and google-java-format hooks"
         },
         {
             "name": "json-lsp",
-            "source": { "source": "github", "repo": "zircote/json-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/json-lsp"
+            },
             "description": "JSON development with vscode-json-languageserver and schema validation hooks"
         },
         {
             "name": "kotlin-lsp",
-            "source": { "source": "github", "repo": "zircote/kotlin-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/kotlin-lsp"
+            },
             "description": "Kotlin development with kotlin-language-server LSP and ktlint hooks"
         },
         {
             "name": "latex-lsp",
-            "source": { "source": "github", "repo": "zircote/latex-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/latex-lsp"
+            },
             "description": "LaTeX development with texlab LSP and chktex hooks"
         },
         {
             "name": "lua-lsp",
-            "source": { "source": "github", "repo": "zircote/lua-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/lua-lsp"
+            },
             "description": "Lua development with lua-language-server LSP and luacheck hooks"
         },
         {
             "name": "markdown-lsp",
-            "source": { "source": "github", "repo": "zircote/markdown-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/markdown-lsp"
+            },
             "description": "Markdown development with marksman LSP and markdownlint hooks"
         },
         {
             "name": "php-lsp",
-            "source": { "source": "github", "repo": "zircote/php-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/php-lsp"
+            },
             "description": "PHP development with intelephense LSP, php-cs-fixer, and phpstan hooks"
         },
         {
             "name": "python-lsp",
-            "source": { "source": "github", "repo": "zircote/python-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/python-lsp"
+            },
             "description": "Python development with pylsp/pyright LSP, ruff, black, and mypy hooks"
         },
         {
             "name": "ruby-lsp",
-            "source": { "source": "github", "repo": "zircote/ruby-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/ruby-lsp"
+            },
             "description": "Ruby development with solargraph LSP and rubocop hooks"
         },
         {
             "name": "rust-lsp",
-            "source": { "source": "github", "repo": "zircote/rust-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/rust-lsp"
+            },
             "description": "Rust development with rust-analyzer LSP, clippy, rustfmt, and cargo-audit hooks"
         },
         {
             "name": "scala-lsp",
-            "source": { "source": "github", "repo": "zircote/scala-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/scala-lsp"
+            },
             "description": "Scala development with Metals LSP and scalafmt hooks"
         },
         {
             "name": "sql-lsp",
-            "source": { "source": "github", "repo": "zircote/sql-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/sql-lsp"
+            },
             "description": "SQL development with sql-language-server LSP and sqlfluff hooks"
         },
         {
             "name": "svelte-lsp",
-            "source": { "source": "github", "repo": "zircote/svelte-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/svelte-lsp"
+            },
             "description": "Svelte development with svelte-language-server LSP and eslint-plugin-svelte hooks"
         },
         {
             "name": "swift-lsp",
-            "source": { "source": "github", "repo": "zircote/swift-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/swift-lsp"
+            },
             "description": "Swift development with sourcekit-lsp and swiftformat hooks"
         },
         {
             "name": "terraform-lsp",
-            "source": { "source": "github", "repo": "zircote/terraform-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/terraform-lsp"
+            },
             "description": "Terraform/Terragrunt development with terraform-ls LSP, tflint, trivy, and checkov hooks"
         },
         {
             "name": "typescript-lsp",
-            "source": { "source": "github", "repo": "zircote/typescript-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/typescript-lsp"
+            },
             "description": "TypeScript/JavaScript development with vtsls LSP, eslint, and prettier hooks"
         },
         {
             "name": "vue-lsp",
-            "source": { "source": "github", "repo": "zircote/vue-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/vue-lsp"
+            },
             "description": "Vue.js development with Volar LSP, eslint-plugin-vue, and prettier hooks"
         },
         {
             "name": "yaml-lsp",
-            "source": { "source": "github", "repo": "zircote/yaml-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/yaml-lsp"
+            },
             "description": "YAML development with yaml-language-server LSP and yamllint hooks"
         },
         {
             "name": "zig-lsp",
-            "source": { "source": "github", "repo": "zircote/zig-lsp" },
+            "source": {
+                "source": "github",
+                "repo": "zircote/zig-lsp"
+            },
             "description": "Zig development with zls LSP and zig fmt hooks"
         }
     ]
